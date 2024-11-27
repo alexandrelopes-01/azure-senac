@@ -11,14 +11,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: python:2.7
+    
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+      steps:
+  - name: Set up Python
+    uses: actions/setup-python@v2
+    with:
+      python-version: '3.9'  # Alterar para a versão suportada
 
     - name: Install dependencies
       run: |
